@@ -1,7 +1,11 @@
-on: push
+name: test
+
+on:
+  push:
+    branches: ["dev"]
 jobs:
   first-job:
     runs-on: windows-latest
     steps:
-      - run node --version
-      - run npm --version
+      - run: node --version
+      - run: npm --version
