@@ -2,7 +2,7 @@ name: test
 
 on:
   push:
-    branches: ["dev"]
+    branches: ["prod"]
 jobs:
   first-job:
     runs-on: windows-latest
