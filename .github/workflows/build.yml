@@ -2,18 +2,32 @@ name: Deploy Portfolio Site
 
 on:
   push:
-    branches: ["prod"]
+    branches: ["prod"] # Only deploy on pushes to prod branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Pull code from repo
+      # 1. Checkout repo
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      # 2. Configure AWS credentials
+      # 2. Setup Node (match your local Node version if possible)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Build site (outputs to dist/)
+      - name: Build site
+        run: npm run build
+
+      # 5. Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -21,10 +35,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
 
-      # 3. Sync repo files to S3
+      # 6. Sync build output to S3
       - name: Upload to S3
-        run: aws s3 sync ./site s3://asad-ali-khan-static-portfolio-site --delete
+        run: aws s3 sync dist/ s3://asad-ali-khan-static-portfolio-site --delete
 
-      # 4. Invalidate CloudFront cache so new changes are visible instantly
+      # 7. Invalidate CloudFront cache
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id E2Z22J7ROYK8HK --paths "/*"
