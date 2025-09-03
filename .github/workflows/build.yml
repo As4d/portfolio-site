@@ -1,13 +1,19 @@
-name: List S3 Bucket
+name: Deploy Portfolio Site
 
 on:
   push:
-    branches: ["dev"]
+    branches: ["prod"]
 
 jobs:
-  list-bucket:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # 1. Pull code from repo
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # 2. Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -15,5 +21,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
 
-      - name: List S3 bucket contents
-        run: aws s3 ls s3://asad-ali-khan-static-portfolio-site --recursive
+      # 3. Sync repo files to S3
+      - name: Upload to S3
+        run: aws s3 sync . s3://asad-ali-khan-static-portfolio-site --delete
+
+      # 4. Invalidate CloudFront cache so new changes are visible instantly
+      - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id E2Z22J7ROYK8HK --paths "/*"
