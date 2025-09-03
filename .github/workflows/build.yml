@@ -23,7 +23,7 @@ jobs:
 
       # 3. Sync repo files to S3
       - name: Upload to S3
-        run: aws s3 sync . s3://asad-ali-khan-static-portfolio-site --delete
+        run: aws s3 sync ./site s3://asad-ali-khan-static-portfolio-site --delete
 
       # 4. Invalidate CloudFront cache so new changes are visible instantly
       - name: Invalidate CloudFront cache
