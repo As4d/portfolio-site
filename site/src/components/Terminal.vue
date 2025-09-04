@@ -9,10 +9,13 @@
 
 <style scoped>
 .terminal {
-  flex: 1;                /* take all remaining space below Boot */
+  flex: 1;
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  color: #33ff33;
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  font-size: 16px;
 }
 
 .line {
@@ -28,7 +31,9 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #33ff33;
+  color: inherit; /* match terminal text */
+  font-family: inherit; /* inherit from terminal */
+  font-size: inherit; /* inherit from terminal */
   flex: 1;
 }
 </style>
