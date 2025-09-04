@@ -50,6 +50,8 @@ export default {
   flex: 1;
   background: transparent;
   border: none;
+  color: #00ff00;
+  columns: inherit;
   font-family: inherit;
   font-size: inherit;
   outline: none;
