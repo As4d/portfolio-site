@@ -82,3 +82,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+html, body, #app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  overflow: hidden; /* kill scrollbars */
+}
