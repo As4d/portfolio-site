@@ -8,6 +8,7 @@
 ██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
 ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝
 Welcome to my linux terminal style portfolio :)! - Asad Ali Khan
+Currently a work in progress 🏗️
 </pre>
   </div>
 </template>
