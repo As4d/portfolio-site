@@ -109,4 +109,36 @@ export default {
   font-size: inherit;
   flex: 1;
 }
+
+/* Chrome, Edge, Safari */
+.terminal::-webkit-scrollbar {
+  width: 8px;
+  /* scrollbar width */
+  height: 8px;
+  /* for horizontal scroll if needed */
+}
+
+.terminal::-webkit-scrollbar-track {
+  background: black;
+  /* track color */
+}
+
+.terminal::-webkit-scrollbar-thumb {
+  background-color: #33ff33;
+  /* the draggable part */
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.terminal::-webkit-scrollbar-thumb:hover {
+  background-color: #66ff66;
+}
+
+/* Firefox */
+.terminal {
+  scrollbar-width: thin;
+  /* "auto" | "thin" | "none" */
+  scrollbar-color: #33ff33 black;
+  /* thumb color | track color */
+}
 </style>
