@@ -1,30 +1,57 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+export default {
+  // Properties returned from data() become reactive state
+  // and will be exposed on `this`.
+  data() {},
+
+  // Methods are functions that mutate state and trigger updates.
+  // They can be bound as event handlers in templates.
+  methods: {},
+
+  // Lifecycle hooks are called at different stages
+  // of a component's lifecycle.
+  // This function will be called when the component is mounted.
+  mounted() {},
+};
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="terminal-prompt">
+    <label class="terminal-prompt__label">user@portfolio:~$</label>
+    <input
+      class="terminal-prompt__input"
+      type="text"
+      autofocus
+      spellcheck="false"
+      autocomplete="off"
+    />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.terminal-prompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.terminal-prompt__label {
+  margin-right: 0.5rem;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.terminal-prompt__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
 }
 </style>
