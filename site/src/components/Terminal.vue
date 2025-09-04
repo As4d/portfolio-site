@@ -1,20 +1,20 @@
 <template>
   <div class="terminal">
-    <div v-for="(line, index) in lines" :key="index" class="line">
-      <span class="prompt">user@portfolio:~$</span>
-      <span class="text">{{ line }}</span>
+    <!-- Past commands and their outputs -->
+    <div v-for="(entry, index) in history" :key="index">
+      <div class="line">
+        <span class="prompt">user@portfolio:~$</span>
+        <span class="text">{{ entry.command }}</span>
+      </div>
+      <div v-if="entry.output" class="output" v-for="(line, idx) in entry.output" :key="idx">
+        {{ line }}
+      </div>
     </div>
 
     <!-- Active input line -->
     <div class="line">
       <span class="prompt">user@portfolio:~$</span>
-      <input
-        class="input"
-        type="text"
-        v-model="currentInput"
-        @keyup.enter="handleEnter"
-        autofocus
-      />
+      <input class="input" type="text" v-model="currentInput" @keyup.enter="handleEnter" autofocus />
     </div>
   </div>
 </template>
@@ -23,16 +23,47 @@
 export default {
   data() {
     return {
-      lines: [],         // stores submitted commands
-      currentInput: "",  // what user is typing
+      history: [], // stores command + outputs
+      currentInput: "", // active line
     };
   },
   methods: {
     handleEnter() {
-      if (this.currentInput.trim() !== "") {
-        this.lines.push(this.currentInput); // save typed command
-        this.currentInput = "";             // reset input
+      const command = this.currentInput.trim();
+      let output = [];
+
+      if (command) {
+        // Basic command handling
+        switch (command) {
+          case "ls":
+            output = ["skills.txt    about.txt    projects.txt"];
+            break;
+          case "whoami":
+            output = ["Asad Ali Khan"]
+            break;
+          case "help":
+            output = [
+              "Available commands:",
+              "ls - list files",
+              "cat <file> - view file contents",
+              "clear - clear the screen",
+              "help - show this message",
+              "whoami - shows my name"
+            ];
+            break;
+          case "clear":
+            this.history = [];
+            this.currentInput = "";
+            return; // don’t add "clear" itself to history
+          default:
+            output = [`bash: ${command}: command not found`];
+        }
+
+        // Push command and output to history
+        this.history.push({ command, output });
       }
+
+      this.currentInput = "";
     },
   },
 };
@@ -47,7 +78,7 @@ export default {
   font-family: "Fira Code", "Courier New", Courier, monospace;
   padding: 1rem;
   box-sizing: border-box;
-  overflow-y: auto; /* scroll if too many lines */
+  overflow-y: auto;
 }
 
 .line {
@@ -61,6 +92,12 @@ export default {
 
 .text {
   white-space: pre-wrap;
+}
+
+.output {
+  white-space: pre-wrap;
+  text-align: left;
+  width: 100%;
 }
 
 .input {
