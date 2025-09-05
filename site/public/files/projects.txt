@@ -1,0 +1,19 @@
+Recent Projects:
+
+1. Portfolio Site Infrastructure as Code (IaC) + Agile Methodologies (2025)
+   └── Terraform IaC for a secure AWS portfolio site using S3, CloudFront, Route 53 & ACM, with Continuous 
+       Deployment via GitHub Actions, plus Agile practices & Terraform Cloud.
+   └── Used to deploy this!   
+   └── Tech: Terraform, AWS, Jira/Agile, Github Actions
+   └── Link: https://github.com/As4d/portfolio-site-iac
+   
+2. AlgoAI (2025)
+   └── LeetCode-style platform using Vue.js, Django, and DeepSeek to deliver AI-powered coding hints
+   └── Tech: Django, Vue.js, SQLite
+   └── Link: https://github.com/As4d/algo-ai
+   
+3. CIFAR-10 Image Classification with Convolutional Neural Network (2025)
+   └── Custom convolutional neural network for CIFAR-10 classification, built from scratch in Python with 
+       PyTorch.
+   └── Tech: Python/PyTorch, CNN, Machine Learning, Computer Vision
+   └── Link: E-Mail for more information!

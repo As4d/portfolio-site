@@ -1,0 +1,3 @@
+Working towards:
+AWS Certified Solutions Architect - Associate
+HashiCorp Certified: Terraform Associate (003)
