@@ -8,10 +8,13 @@
 ██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
 ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝
 👋 Welcome to my linux terminal style portfolio :) - Asad Ali Khan. 👋
-🏗️ History search, more files, tabbing files and mobile compatibility in the works! 🏗️
+
+💻 This site works on mobile, but is best experienced on a PC. 📱
 
 ⁉️ Non-technical? No problem! Try typing "help" to get you started.
 Still stuck? Try out  "whoami", "cat about.txt" and "cat projects.txt". ⁉️
+
+🏗️ History search, more files, tabbing files in the works! 🏗️
 </pre>
   </div>
 </template>
