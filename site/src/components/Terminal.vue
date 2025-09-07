@@ -143,6 +143,7 @@ export default {
 </script>
 
 <style scoped>
+/* Terminal window */
 .terminal {
   width: 100%;
   height: 100vh;
@@ -150,11 +151,13 @@ export default {
   color: #33ff33;
   font-family: "Fira Code", "Courier New", Courier, monospace;
   font-size: 16px;
-  /* set baseline so input + prompt match */
+  /* base font size */
   line-height: 1.5;
   padding: 1rem;
   box-sizing: border-box;
   overflow-y: auto;
+  overflow-x: hidden;
+  /* prevent horizontal scrollbars */
 }
 
 .line {
@@ -166,7 +169,7 @@ export default {
 .prompt {
   margin-right: 0.5rem;
   white-space: pre;
-  /* keep the exact spacing of the prompt */
+  /* keep spacing of the prompt */
 }
 
 .text {
@@ -188,10 +191,11 @@ export default {
   font-family: inherit;
   font-size: inherit;
   flex: 1;
+  min-width: 0;
+  /* prevents input overflow on small screens */
 }
 
-/* Custom scrollbars */
-/* Chrome, Edge, Safari */
+/* Custom scrollbars - desktop only */
 .terminal::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -215,5 +219,40 @@ export default {
 .terminal {
   scrollbar-width: thin;
   scrollbar-color: #33ff33 #000;
+}
+
+/* --- Mobile responsiveness --- */
+@media (max-width: 768px) {
+  .boot-banner {
+    font-size: 10px;
+    line-height: 1.1;
+    padding: 0.5rem;
+  }
+
+  .terminal {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+
+  .input {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .boot-banner {
+    font-size: 8px;
+    line-height: 1;
+    padding: 0.25rem;
+  }
+
+  .terminal {
+    font-size: 12px;
+    padding: 0.25rem;
+  }
+
+  .input {
+    font-size: 12px;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="boot-banner">
-<pre>
+    <pre>
 ██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗ 
 ██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
 ██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
@@ -17,11 +17,16 @@ Still stuck? Try out  "whoami", "cat about.txt" and "cat projects.txt". ⁉️
 </template>
 
 <style scoped>
+/* Boot banner styles */
 .boot-banner {
-  flex-shrink: 0;         /* never shrink */
+  flex-shrink: 0;
+  /* never shrink */
   white-space: pre;
+  /* preserve ASCII art formatting */
   font-size: 12px;
   line-height: 1.2;
   padding: 1rem;
+  overflow-x: auto;
+  /* prevent ASCII art from overflowing on mobile */
 }
 </style>
