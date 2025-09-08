@@ -20,7 +20,7 @@ export default {
   color: #33ff33;
   font-family: "Courier New", monospace;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column; /* stack boot + terminal */
   overflow: hidden; /* no scrollbars */

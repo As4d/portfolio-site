@@ -31,5 +31,6 @@ Still stuck? Try out  "whoami", "cat about.txt" and "cat projects.txt". ⁉️
   padding: 1rem;
   overflow-x: auto;
   /* prevent ASCII art from overflowing on mobile */
+  text-align: left;
 }
 </style>
