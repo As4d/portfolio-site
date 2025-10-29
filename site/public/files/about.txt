@@ -1,4 +1,7 @@
-👋 Hi, I’m Asad - a final-year integrated Master’s (MSci) Computer Science student at Queen Mary University of London.
-Currently focused on DevOps and Cloud Engineering, with hands-on AWS certification prep and a cloud-native project in the works.
-I bring a strong foundation in Python and Java, a portfolio of software engineering projects, and previous experience in a cybersecurity internship.
-Open to Graduate, Entry-Level, or Junior roles across Cloud, DevOps, Software, or Cyber Security.
+👋 Hi, I’m Asad — a final-year MSci Computer Science student at Queen Mary University of London, and an AWS Certified Solutions Architect – Associate.
+
+I’m passionate about DevOps and Cloud Engineering, currently building a cloud-native infrastructure project and expanding my expertise with Terraform and Kubernetes.
+
+I bring a solid foundation in Python and Java, hands-on experience in software engineering, and a prior cybersecurity internship.
+
+I’m open to Graduate, Entry-Level, or Junior opportunities across Cloud, DevOps, Software, or Cyber Security.
