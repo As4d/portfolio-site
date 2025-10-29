@@ -1,4 +1,5 @@
 Earned:
 AWS Certified Solutions Architect - Associate
-Working towards:
-HashiCorp Certified: Terraform Associate (003)
+Planning on Working Towards:
+HashiCorp Certified: Terraform Associate
+Certified Kubernetes Administrator (CKA)
