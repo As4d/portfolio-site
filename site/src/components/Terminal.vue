@@ -1,5 +1,6 @@
 <template>
   <div class="terminal" ref="terminal">
+    <Boot />
     <!-- History -->
     <div v-for="(entry, index) in history" :key="index">
       <div class="line">
@@ -20,7 +21,9 @@
 </template>
 
 <script>
+import Boot from './Boot.vue';
 export default {
+  components: { Boot },
   data() {
     return {
       history: [],        // [{ command: string, output: string[] }]
@@ -145,19 +148,17 @@ export default {
 <style scoped>
 /* Terminal window */
 .terminal {
-  width: 100%;
-  height: 100vh;
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
   background: #000;
   color: #33ff33;
   font-family: "Fira Code", "Courier New", Courier, monospace;
   font-size: 16px;
-  /* base font size */
   line-height: 1.5;
   padding: 1rem;
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
-  /* prevent horizontal scrollbars */
 }
 
 .line {
