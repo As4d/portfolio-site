@@ -1,3 +1,4 @@
-Working towards:
+Earned:
 AWS Certified Solutions Architect - Associate
+Working towards:
 HashiCorp Certified: Terraform Associate (003)
